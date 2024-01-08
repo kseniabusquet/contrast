@@ -442,10 +442,8 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="fs-5 fw-medium text-primary">Связаться с нами</p>
-                    <h1 class="display-5 mb-4">Требуется помощь или консультация?</h1>
-                    <!-- <p>бла бла бла бла бла бла бла</p>
-                    <p class="mb-4">бла бла бла бла бла бла бла</p> -->
+                    <p class="fs-5 fw-medium text-primary">Требуется помощь или консультация?</p>
+                    <h2 class="fw-bold mb-4">Свяжитесь с нами по телефону</h2>
                     <p class="d-flex align-items-center rounded overflow-hidden border border-primary">
                         <span class="btn-lg-square bg-primary" style="width: 55px; height: 55px;">
                             <i class="fa fa-phone-alt text-white"></i>
@@ -466,39 +464,44 @@
                     </p>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <h2 class="mb-4">Оставьте свое сообщение</h2>
-                    <div class="row g-3">
-                        <div class="col-sm-6 control-group">
-                            <input type="text" class="form-control py-2" id="name" placeholder="Ваше имя"
-                                required="required"
-                                data-validation-required-message="Пожалуйста, введите Ваше имя" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="col-sm-6 control-group">
-                            <input type="email" class="form-control py-2" id="email" placeholder="Ваш e-mail"
-                                required="required"
-                                data-validation-required-message="Пожалуйста, введите Ваш e-mail" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="col-12 control-group">
-                            <input type="text" class="form-control py-2" id="subject" placeholder="Тема"
-                                required="required"
-                                data-validation-required-message="Пожалуйста, введите тему сообщения" />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="col-12 control-group">
-                            <textarea class="form-control" rows="4" id="message" placeholder="Сообщение"
-                                required="required"
-                                data-validation-required-message="Пожалуйста, введите Ваше cообщение"></textarea>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="col-12 text-center">
-                            <button class="btn btn-primary w-100 py-2" type="submit" id="sendMessageButton">
-                                <span>Отправить</span>
-                                <div class="d-none spinner-border spinner-border-sm text-light ms-3"
-                                    role="status"></div>
-                            </button>
-                        </div>
+                    <div class="contact-form bg-white shadow rounded p-5">
+                        <h2 class="text-center fw-bold mb-4">Оставьте свое сообщение</h2>
+                        <div id="alertMessage"></div>
+                        <form id="contactForm" novalidate="novalidate">
+                            <div class="row">
+                                <div class="col-sm-6 control-group">
+                                    <input type="text" class="form-control py-2" id="name" placeholder="Ваше имя"
+                                        required="required"
+                                        data-validation-required-message="Пожалуйста, введите Ваше имя" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-sm-6 control-group">
+                                    <input type="email" class="form-control py-2" id="email" placeholder="Ваш e-mail"
+                                        required="required"
+                                        data-validation-required-message="Пожалуйста, введите Ваш e-mail" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-12 control-group">
+                                    <input type="text" class="form-control py-2" id="subject" placeholder="Тема"
+                                        required="required"
+                                        data-validation-required-message="Пожалуйста, введите тему сообщения" />
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-12 control-group">
+                                    <textarea class="form-control" rows="4" id="message" placeholder="Сообщение"
+                                        required="required"
+                                        data-validation-required-message="Пожалуйста, введите Ваше cообщение"></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-2" type="submit" id="sendMessageButton">
+                                        <span>Отправить</span>
+                                        <div class="d-none spinner-border spinner-border-sm text-light ms-3"
+                                            role="status"></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
