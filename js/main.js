@@ -84,4 +84,52 @@
   function displayErrorMessage(element, message) {
     element.siblings('.help-block').text(message);
   }
+
+  function sendEmail() {
+    var formData = $("#contactForm").serialize();
+
+    $("#sendMessageButton").prop("disabled", true); // Disable the button
+    $("#sendMessageButton span").text("Отправка..."); // Change button text
+
+    $.ajax({
+      type: "POST",
+      url: "php/contact.php",
+      data: formData,
+      success: function(response) {
+        $('#alertMessage').html(response);
+        $("#sendMessageButton").prop("disabled", false);
+        $("#sendMessageButton span").text("Отправить");
+
+        if (response.includes("success")) {
+          setTimeout(function() {
+            window.location.href = "msg_success_page.html";
+          }, 2000);
+        } else {
+          setTimeout(function() {
+            window.location.href = "msg_error_page.html"; // Redirect to error page
+          }, 2000);
+        }
+      },
+      error: function(xhr, status, error) {
+        console.error(error); // Log any AJAX errors to the console
+        setTimeout(function() {
+          window.location.href = "msg_error_page.html"; // Redirect to error page on AJAX error
+        }, 2000);
+      }
+    });
+  }
+
+  // Binding the email sending function to the button click event
+  $(document).ready(function() {
+    $("#sendMessageButton").click(function(event) {
+      event.preventDefault(); // Prevent default form submission
+      sendEmail(); // Call the function to send the email
+    });
+
+    // Additional focus function to clear alert message
+    $('#name, #email, #subject, #message').focus(function() {
+      $('#alertMessage').html('');
+    });
+  });
+
 })(jQuery);
