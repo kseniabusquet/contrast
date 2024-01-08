@@ -97,24 +97,8 @@
       data: formData,
       success: function(response) {
         $('#alertMessage').html(response);
-        $("#sendMessageButton").prop("disabled", false);
-        $("#sendMessageButton span").text("Отправить");
-
-        if (response.includes("success")) {
-          setTimeout(function() {
-            window.location.href = "msg_success_page.html";
-          }, 2000);
-        } else {
-          setTimeout(function() {
-            window.location.href = "msg_error_page.html"; // Redirect to error page
-          }, 2000);
-        }
-      },
-      error: function(xhr, status, error) {
-        console.error(error); // Log any AJAX errors to the console
-        setTimeout(function() {
-          window.location.href = "msg_error_page.html"; // Redirect to error page on AJAX error
-        }, 2000);
+        $("#sendMessageButton").prop("disabled", false); // Enable the button
+        $("#sendMessageButton span").text("Отправить"); // Reset button text
       }
     });
   }
