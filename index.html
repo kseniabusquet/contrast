@@ -468,33 +468,36 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <h2 class="mb-4">Оставьте свое сообщение</h2>
                     <div class="row g-3">
-                        <div class="col-sm-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                <label for="name">Ваше имя</label>
-                            </div>
+                        <div class="col-sm-6 control-group">
+                            <input type="text" class="form-control py-2" id="name" placeholder="Ваше имя"
+                                required="required"
+                                data-validation-required-message="Пожалуйста, введите Ваше имя" />
+                            <p class="help-block text-danger"></p>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="form-floating">
-                                <input type="email" class="form-control" id="mail" placeholder="Your Email">
-                                <label for="mail">Ваш e-mail</label>
-                            </div>
+                        <div class="col-sm-6 control-group">
+                            <input type="email" class="form-control py-2" id="email" placeholder="Ваш e-mail"
+                                required="required"
+                                data-validation-required-message="Пожалуйста, введите Ваш e-mail" />
+                            <p class="help-block text-danger"></p>
                         </div>
-                        <div class="col-sm-12">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="mobile" placeholder="Your Mobile">
-                                <label for="mobile">Номер телефона</label>
-                            </div>
+                        <div class="col-12 control-group">
+                            <input type="text" class="form-control py-2" id="subject" placeholder="Тема"
+                                required="required"
+                                data-validation-required-message="Пожалуйста, введите тему сообщения" />
+                            <p class="help-block text-danger"></p>
                         </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a message here" id="message"
-                                    style="height: 130px"></textarea>
-                                <label for="message">Сообщение</label>
-                            </div>
+                        <div class="col-12 control-group">
+                            <textarea class="form-control" rows="4" id="message" placeholder="Сообщение"
+                                required="required"
+                                data-validation-required-message="Пожалуйста, введите Ваше cообщение"></textarea>
+                            <p class="help-block text-danger"></p>
                         </div>
                         <div class="col-12 text-center">
-                            <button class="btn btn-primary w-100 py-3" type="submit" id="sendMessageButton">Отправить</button>
+                            <button class="btn btn-primary w-100 py-2" type="submit" id="sendMessageButton">
+                                <span>Отправить</span>
+                                <div class="d-none spinner-border spinner-border-sm text-light ms-3"
+                                    role="status"></div>
+                            </button>
                         </div>
                     </div>
                 </div>
