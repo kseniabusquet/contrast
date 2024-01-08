@@ -9,6 +9,9 @@
   @include img-fluid();
 }
 
+.img-product {
+  @include img-product();
+}
 
 // Image thumbnails
 .img-thumbnail {
@@ -20,6 +23,7 @@
 
   // Keep them at most 100% wide
   @include img-fluid();
+  @include img-product();
 }
 
 //

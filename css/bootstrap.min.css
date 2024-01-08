@@ -509,6 +509,10 @@ progress {
   max-width: 100%;
   height: auto;
 }
+.img-product {
+  max-width: 200%;
+  height: auto;
+}
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
