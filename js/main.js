@@ -86,22 +86,35 @@
   }
 
   function sendEmail() {
+    // Check if form fields are non-empty
+    var name = $("#name").val();
+    var email = $("#email").val();
+    var subject = $("#subject").val();
+    var message = $("#message").val();
+
+    if (name === '' || email === '' || subject === '' || message === '') {
+        // Handle the case where some fields are empty
+        alert("Please fill out all fields before submitting the form.");
+        return;
+    }
+
+    // If all fields are filled, proceed with AJAX request
     var formData = $("#contactForm").serialize();
 
     $("#sendMessageButton").prop("disabled", true); // Disable the button
     $("#sendMessageButton span").text("Отправка..."); // Change button text
 
     $.ajax({
-      type: "POST",
-      url: "php/contact.php",
-      data: formData,
-      success: function(response) {
-        $('#alertMessage').html(response);
-        $("#sendMessageButton").prop("disabled", false); // Enable the button
-        $("#sendMessageButton span").text("Отправить"); // Reset button text
-      }
+        type: "POST",
+        url: "php/contact.php",
+        data: formData,
+        success: function(response) {
+            $('#alertMessage').html(response);
+            $("#sendMessageButton").prop("disabled", false); // Enable the button
+            $("#sendMessageButton span").text("Отправить"); // Reset button text
+        }
     });
-  }
+}
 
   // Binding the email sending function to the button click event
   $(document).ready(function() {
