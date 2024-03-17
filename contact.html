@@ -9,7 +9,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="/img/logo/contrast_logo.png" rel="icon" type="image/png">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -78,7 +78,7 @@
                     <div class="navbar-nav">
                         <a href="index.html" class="nav-item nav-link active">Главная</a>
                         <a href="about.html" class="nav-item nav-link">О компании</a>
-                        <a href="service.html" class="nav-item nav-link">Услуги</a>
+                        <a href="service.html" class="nav-item nav-link">Реквизиты</a>
                         <a href="product.html" class="nav-item nav-link">Наша продукция</a>
                         <a href="price.html" class="nav-item nav-link">Прайс</a>
                         <a href="client.html" class="nav-item nav-link">Наши клиенты</a>
@@ -107,7 +107,6 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <p class="fs-5 fw-medium text-primary">Свяжитесь с нами</p>
                 <h1 class="display-5 mb-5">Свяжитесь с нами по любым вопросам</h1>
             </div>
             <div class="row g-5">
@@ -116,7 +115,7 @@
                         <div class="contact-form bg-white shadow rounded p-5">
                             <h2 class="text-center fw-bold mb-4">Оставьте свое сообщение</h2>
                             <div id="alertMessage"></div>
-                            <form id="contactForm" novalidate="novalidate">
+                            <form id="contactForm" novalidate="novalidate" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-sm-6 control-group">
                                         <input type="text" class="form-control py-2" id="name" placeholder="Ваше имя"
@@ -125,6 +124,11 @@
                                         <p class="help-block text-danger"></p>
                                     </div>
                                     <div class="col-sm-6 control-group">
+                                        <input type="text" class="form-control py-2" id="company"
+                                            placeholder="Организация/ИНН" />
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="col-sm-12 control-group">
                                         <input type="email" class="form-control py-2" id="email"
                                             placeholder="Ваш e-mail" required="required"
                                             data-validation-required-message="Пожалуйста, введите Ваш e-mail" />
@@ -142,8 +146,12 @@
                                             data-validation-required-message="Пожалуйста, введите Ваше сообщение"></textarea>
                                         <p class="help-block text-danger"></p>
                                     </div>
+                                    <div class="col-12 control-group">
+                                        <input type="file" class="form-control py-2" id="attachment" name="attachment">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-2" type="submit" id="sendMessageButton">
+                                        <button class="btn btn-primary w-100 py-2" type="submit" onclick="sendEmail()" id="sendMessageButton">
                                             <span>Отправить</span>
                                             <div class="d-none spinner-border spinner-border-sm text-light ms-3"
                                                 role="status"></div>
@@ -212,15 +220,15 @@
                     <h4 class="text-white mb-4">Полезные ссылки</h4>
                     <a class="btn btn-link" href="about.html">О компании</a>
                     <a class="btn btn-link" href="contact.html">Контакты</a>
-                    <a class="btn btn-link" href="service.html">Наши услуги</a>
+                    <a class="btn btn-link" href="service.html">Наши Реквизиты</a>
                     <a class="btn btn-link" href="quote.html">Обратная связь</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Рабочие часы</h4>
                     <p class="mb-1">Понедельник - пятница</p>
-                    <h6 class="text-light">09:00 - 19:00</h6>
+                    <h6 class="text-light">09:30 - 17:30</h6>
                     <p class="mb-1">Суббота</p>
-                    <h6 class="text-light">09:00 - 12:00</h6>
+                    <h6 class="text-light">10:00 - 16:00</h6>
                     <p class="mb-1">Воскресенье</p>
                     <h6 class="text-light">Закрыто</h6>
                 </div>

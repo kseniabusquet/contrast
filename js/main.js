@@ -87,46 +87,73 @@
 
   function sendEmail() {
     // Check if form fields are non-empty
-    var name = $("#name").val();
-    var email = $("#email").val();
-    var subject = $("#subject").val();
-    var message = $("#message").val();
+    var name = $('#name').val();
+    var email = $('#email').val();
+    var subject = $('#subject').val();
+    var message = $('#message').val();
 
     if (name === '' || email === '' || subject === '' || message === '') {
-        // Handle the case where some fields are empty
-        alert("Please fill out all fields before submitting the form.");
-        return;
+      // Handle the case where some fields are empty
+      alert('Please fill out all fields before submitting the form.');
+      return;
     }
 
     // If all fields are filled, proceed with AJAX request
-    var formData = $("#contactForm").serialize();
+    var formData = $('#contactForm').serialize();
 
-    $("#sendMessageButton").prop("disabled", true); // Disable the button
-    $("#sendMessageButton span").text("Отправка..."); // Change button text
+    $('#sendMessageButton').prop('disabled', true); // Disable the button
+    $('#sendMessageButton span').text('Отправка...'); // Change button text
 
     $.ajax({
-        type: "POST",
-        url: "php/contact.php",
-        data: formData,
-        success: function(response) {
-            $('#alertMessage').html(response);
-            $("#sendMessageButton").prop("disabled", false); // Enable the button
-            $("#sendMessageButton span").text("Отправить"); // Reset button text
-        }
+      type: 'POST',
+      url: 'php/contact.php',
+      data: formData,
+      success: function (response) {
+        $('#alertMessage').html(response);
+        $('#sendMessageButton').prop('disabled', false); // Enable the button
+        $('#sendMessageButton span').text('Отправить'); // Reset button text
+      },
     });
-}
+  }
 
   // Binding the email sending function to the button click event
-  $(document).ready(function() {
-    $("#sendMessageButton").click(function(event) {
+  $(document).ready(function () {
+    $('#sendMessageButton').click(function (event) {
       event.preventDefault(); // Prevent default form submission
       sendEmail(); // Call the function to send the email
     });
 
     // Additional focus function to clear alert message
-    $('#name, #email, #subject, #message').focus(function() {
+    $('#name, #email, #subject, #message').focus(function () {
       $('#alertMessage').html('');
     });
   });
-
 })(jQuery);
+
+const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+        navLinks.forEach(navLink => navLink.parentNode.classList.remove('active'));
+
+        this.parentNode.classList.add('active');
+    });
+});
+
+const currentPage = window.location.pathname;
+
+navLinks.forEach(link => {
+    if (link.href.includes(currentPage)) {
+        link.parentNode.classList.add('active');
+    }
+});
+
+const buttons = document.querySelectorAll('.btn-primary');
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const targetId = button.getAttribute('data-details-target');
+    const target = document.querySelector(targetId);
+    target.classList.toggle('collapse');
+  });
+});
