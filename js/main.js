@@ -141,7 +141,6 @@ navLinks.forEach(link => {
 });
 
 const currentPage = window.location.pathname;
-
 navLinks.forEach(link => {
     if (link.href.includes(currentPage)) {
         link.parentNode.classList.add('active');
@@ -149,7 +148,6 @@ navLinks.forEach(link => {
 });
 
 const buttons = document.querySelectorAll('.btn-primary');
-
 buttons.forEach(button => {
   button.addEventListener('click', () => {
     const targetId = button.getAttribute('data-details-target');
@@ -157,3 +155,16 @@ buttons.forEach(button => {
     target.classList.toggle('collapse');
   });
 });
+
+window.addEventListener('resize', resizePdfViewer);
+
+function resizePdfViewer() {
+    var pdfViewer = document.getElementById('pdfViewer');
+    var aspectRatio = 3 / 4; // Change this if your PDF has a different aspect ratio
+    var containerWidth = pdfViewer.parentNode.offsetWidth;
+    var containerHeight = containerWidth / aspectRatio;
+    pdfViewer.style.height = containerHeight + 'px';
+}
+
+// Initial call to resize PDF viewer
+resizePdfViewer();

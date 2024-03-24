@@ -37,11 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $file_size = $_FILES["attachment"]["size"];
       $file_error = $_FILES["attachment"]["error"];
 
-      echo "Attachment name: ', '" . $file_name . "'";
-      echo "Attachment temp name: ', '" . $file_tmp_name . "'";
-      echo "Attachment size: ', '" . $file_size . "'";
-      echo "Attachment error: ', '" . $file_error . "'";
-
       // Simple validation (Modify or enhance as needed)
       if ($file_error !== UPLOAD_ERR_OK) {
         echo "<div class='alert alert-danger'>Ошибка при загрузке файла. Попробуйте еще раз.</div>";
@@ -60,10 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $body .= "Content-Disposition: attachment\r\n\r\n";
       $body .= chunk_split(base64_encode(file_get_contents($file_target))) . "\r\n";
       $body .= "--$boundary--";
-
-      echo "Directory: ', '" . $target_dir . "'";
-      echo "Attachment new name: ', '" . $file_name . "'";
-      echo "File target: ', '" . $file_target . "'";
 
       // Move uploaded file
       if (!move_uploaded_file($file_tmp_name, $file_target)) {

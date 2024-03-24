@@ -686,15 +686,15 @@
 }
 
 .pdf-container {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
   position: relative;
   width: 100%;
-  height: 1000px; /* Set height as needed */
+  padding-bottom: 133.33%; /* Aspect ratio: 3:4 (4 / 3 * 100) */
+  overflow: hidden;
 }
-
 .pdf-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   border: none;
@@ -709,10 +709,6 @@
   .card-img-top {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-  }
-
-  .collapse {
-      display: none;
   }
 
   .row > .col-md-6 {
