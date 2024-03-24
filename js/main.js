@@ -94,7 +94,7 @@
 
     if (name === '' || email === '' || subject === '' || message === '') {
       // Handle the case where some fields are empty
-      alert('Please fill out all fields before submitting the form.');
+      alert('Пожалуйста, заполните обязательные поля перед отправкой.');
       return;
     }
 

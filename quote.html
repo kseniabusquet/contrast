@@ -132,13 +132,13 @@
                         <form id="contactForm" novalidate="novalidate" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-sm-6 control-group">
-                                    <input type="text" class="form-control py-2" id="name" name="name"placeholder="Ваше имя"
+                                    <input type="text" class="form-control py-2" id="name" name="name" placeholder="Ваше имя"
                                         required="required"
                                         data-validation-required-message="Пожалуйста, введите Ваше имя" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="col-sm-6 control-group">
-                                    <input type="text" class="form-control py-2" id="company"
+                                    <input type="text" class="form-control py-2" id="company" name="company"
                                         placeholder="Организация/ИНН" />
                                     <p class="help-block text-danger"></p>
                                 </div>
@@ -160,10 +160,10 @@
                                         data-validation-required-message="Пожалуйста, введите Ваше cообщение"></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
-                                <div class="col-12 control-group">
+                                <!--<div class="col-12 control-group">
                                     <input type="file" class="form-control py-2" id="attachment" name="attachment">
                                     <p class="help-block text-danger"></p>
-                                </div>
+                                </div>-->
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 py-2" type="submit" onclick="sendEmail()" id="sendMessageButton">
                                         <span>Отправить</span>

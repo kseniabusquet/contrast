@@ -440,41 +440,41 @@
                     <div class="contact-form bg-white shadow rounded p-5">
                         <h2 class="text-center fw-bold mb-4">Оставьте свое сообщение</h2>
                         <div id="alertMessage"></div>
-                        <form id="contactForm" novalidate="novalidate" enctype="multipart/form-data">
+                        <form id="contactForm" novalidate="novalidate" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-sm-6 control-group">
-                                    <input type="text" class="form-control py-2" id="name" placeholder="Ваше имя"
+                                    <input type="text" class="form-control py-2" id="name" name="name" placeholder="Ваше имя"
                                         required="required"
                                         data-validation-required-message="Пожалуйста, введите Ваше имя" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="col-sm-6 control-group">
-                                    <input type="text" class="form-control py-2" id="company"
+                                    <input type="text" class="form-control py-2" id="company" name="company"
                                         placeholder="Организация/ИНН" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="col-12 control-group">
-                                    <input type="email" class="form-control py-2" id="email" placeholder="Ваш e-mail"
+                                    <input type="email" class="form-control py-2" id="email" name="email" placeholder="Ваш e-mail"
                                         required="required"
                                         data-validation-required-message="Пожалуйста, введите Ваш e-mail" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="col-12 control-group">
-                                    <input type="text" class="form-control py-2" id="subject" placeholder="Тема"
+                                    <input type="text" class="form-control py-2" id="subject" name="subject" placeholder="Тема"
                                         required="required"
                                         data-validation-required-message="Пожалуйста, введите тему сообщения" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="col-12 control-group">
-                                    <textarea class="form-control" rows="4" id="message" placeholder="Сообщение"
+                                    <textarea class="form-control" rows="4" id="message" name="message" placeholder="Сообщение"
                                         required="required"
                                         data-validation-required-message="Пожалуйста, введите Ваше cообщение"></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
-                                <div class="col-12 control-group">
+                                <!-- <div class="col-12 control-group">
                                     <input type="file" class="form-control py-2" id="attachment" name="attachment">
                                     <p class="help-block text-danger"></p>
-                                </div>
+                                </div> -->
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 py-2" type="submit" onclick="sendEmail()" id="sendMessageButton">
                                         <span>Отправить</span>
