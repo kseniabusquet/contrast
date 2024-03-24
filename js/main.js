@@ -88,9 +88,11 @@
   function sendEmail() {
     // Check if form fields are non-empty
     var name = $('#name').val();
+    var company = $('#company').val();
     var email = $('#email').val();
     var subject = $('#subject').val();
     var message = $('#message').val();
+    var attachment = $('#attachment')[0].files[0]; // Get the file object
 
     if (name === '' || email === '' || subject === '' || message === '') {
       // Handle the case where some fields are empty
@@ -98,8 +100,13 @@
       return;
     }
 
-    // If all fields are filled, proceed with AJAX request
-    var formData = $('#contactForm').serialize();
+    var formData = new FormData();
+    formData.append('name', name);
+    formData.append('company', company);
+    formData.append('email', email);
+    formData.append('subject', subject);
+    formData.append('message', message);
+    formData.append('attachment', attachment); // Append the file
 
     $('#sendMessageButton').prop('disabled', true); // Disable the button
     $('#sendMessageButton span').text('Отправка...'); // Change button text
@@ -108,6 +115,8 @@
       type: 'POST',
       url: 'php/contact.php',
       data: formData,
+      contentType: false, // Don't set content type
+      processData: false, // Don't process data
       success: function (response) {
         $('#alertMessage').html(response);
         $('#sendMessageButton').prop('disabled', false); // Enable the button
@@ -168,3 +177,18 @@ function resizePdfViewer() {
 
 // Initial call to resize PDF viewer
 resizePdfViewer();
+
+function validateFileSize(input) {
+  var maxSizeMB = 20; // Maximum file size in MB
+  var maxSizeBytes = maxSizeMB * 1024 * 1024; // Convert MB to bytes
+  var fileSize = input.files[0].size; // Get the size of the selected file
+
+  var fileSizeMessage = document.getElementById('fileSizeMessage');
+
+  if (fileSize > maxSizeBytes) {
+      fileSizeMessage.innerText = 'Размер файла превышает допустимые ' + maxSizeMB + ' MB.';
+      input.value = ''; // Clear the file input
+  } else {
+      fileSizeMessage.innerText = ''; // Clear any previous error message
+  }
+}

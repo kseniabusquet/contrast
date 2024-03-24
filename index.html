@@ -248,11 +248,13 @@
                 </div>
                 <div class="col-lg-6 pt-lg-5 wow fadeIn" data-wow-delay="0.5s">
                     <div class="bg-white rounded-top p-5 mt-lg-5">
-                        <p class="fs-5 fw-medium text-primary">О компании</p>
-                        <div style="display:flex; justify-content:space-evenly; align-items:center">
-                            <img src="/img/logo/contrast_logo.png" alt="Contrast Logo"
-                                style="width: 150px; height: 150px;">
-                            <h3 style="text-align: center;">Ваш доступ к высококачественной электронике</h3>
+                        <div class="row g-5 pt-2 mb-3 align-items-center">
+                            <div class="col-sm-4">
+                                <img class="img-fluid mb-3" src="/img/logo/contrast_logo.png" alt="Contrast Logo">
+                            </div>
+                            <div class="col-sm-8">
+                                <h3 class="mb-3 text-center">Ваш доступ к высококачественной электронике</h3>
+                            </div>
                         </div>
                         <p class="mb-4" style="margin-top: 2rem; margin-bottom: 2rem; text-align: justify;"><strong>ООО
                                 "КОНТРАСТ"</strong> уже многие годы успешно работает в сфере электроники на рынке по
@@ -471,10 +473,10 @@
                                         data-validation-required-message="Пожалуйста, введите Ваше cообщение"></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
-                                <!-- <div class="col-12 control-group">
-                                    <input type="file" class="form-control py-2" id="attachment" name="attachment">
-                                    <p class="help-block text-danger"></p>
-                                </div> -->
+                                <div class="col-12 control-group">
+                                    <input type="file" class="form-control py-2" id="attachment" name="attachment" accept="*" onchange="validateFileSize(this)">
+                                    <p id="fileSizeMessage" class="help-block text-danger"></p>
+                                </div>
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 py-2" type="submit" onclick="sendEmail()" id="sendMessageButton">
                                         <span>Отправить</span>
@@ -536,7 +538,7 @@
                 <div class="col-md-4 col-6 text-center mb-3 mb-md-0 d-flex justify-content-center">
                     <a target="_top" href="http://top.mail.ru/jump?from=1025740">
                         <img src="http://d6.ca.bf.a0.top.list.ru/counter?js=na;id=1025740;t=210" height="31" width="88"
-                            alt="?aeoeia@Mail.ru" />
+                            alt="counter@Mail.ru" />
                     </a>
                 </div>
                 <div class="col-md-4 col-6 text-center text-md-end">

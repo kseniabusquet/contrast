@@ -105,7 +105,8 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h3 class="fs-5 fw-medium text-primary" style="margin-bottom: 20px;">Есть потребность в нашем оборудовании<br>или консультация по нему?</h3>
+                    <h3 class="fs-5 fw-medium text-primary" style="margin-bottom: 20px;">Есть потребность в нашем
+                        оборудовании<br>или консультация по нему?</h3>
                     <p class="d-flex align-items-center rounded overflow-hidden border border-primary">
                         <span class="btn-lg-square bg-primary" style="width: 55px; height: 55px;">
                             <i class="fa fa-phone-alt text-white"></i>
@@ -132,8 +133,8 @@
                         <form id="contactForm" novalidate="novalidate" method="post" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-sm-6 control-group">
-                                    <input type="text" class="form-control py-2" id="name" name="name" placeholder="Ваше имя"
-                                        required="required"
+                                    <input type="text" class="form-control py-2" id="name" name="name"
+                                        placeholder="Ваше имя" required="required"
                                         data-validation-required-message="Пожалуйста, введите Ваше имя" />
                                     <p class="help-block text-danger"></p>
                                 </div>
@@ -143,29 +144,31 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="col-sm-12 control-group">
-                                    <input type="email" class="form-control py-2" id="email" name="email" placeholder="Ваш e-mail"
-                                        required="required"
+                                    <input type="email" class="form-control py-2" id="email" name="email"
+                                        placeholder="Ваш e-mail" required="required"
                                         data-validation-required-message="Пожалуйста, введите Ваш e-mail" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="col-12 control-group">
-                                    <input type="text" class="form-control py-2" id="subject" name="subject" placeholder="Тема"
-                                        required="required"
+                                    <input type="text" class="form-control py-2" id="subject" name="subject"
+                                        placeholder="Тема" required="required"
                                         data-validation-required-message="Пожалуйста, введите тему сообщения" />
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="col-12 control-group">
-                                    <textarea class="form-control" rows="4" id="message" name="message" placeholder="Сообщение"
-                                        required="required"
+                                    <textarea class="form-control" rows="4" id="message" name="message"
+                                        placeholder="Сообщение" required="required"
                                         data-validation-required-message="Пожалуйста, введите Ваше cообщение"></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
-                                <!--<div class="col-12 control-group">
-                                    <input type="file" class="form-control py-2" id="attachment" name="attachment">
-                                    <p class="help-block text-danger"></p>
-                                </div>-->
+                                <div class="col-12 control-group">
+                                    <input type="file" class="form-control py-2" id="attachment" name="attachment"
+                                        accept="*" onchange="validateFileSize(this)">
+                                    <p id="fileSizeMessage" class="help-block text-danger"></p>
+                                </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-2" type="submit" onclick="sendEmail()" id="sendMessageButton">
+                                    <button class="btn btn-primary w-100 py-2" type="submit" onclick="sendEmail()"
+                                        id="sendMessageButton">
                                         <span>Отправить</span>
                                         <div class="d-none spinner-border spinner-border-sm text-light ms-3"
                                             role="status"></div>
@@ -224,7 +227,7 @@
                 <div class="col-md-4 col-6 text-center mb-3 mb-md-0 d-flex justify-content-center">
                     <a target="_top" href="http://top.mail.ru/jump?from=1025740">
                         <img src="http://d6.ca.bf.a0.top.list.ru/counter?js=na;id=1025740;t=210" height="31" width="88"
-                            alt="?aeoeia@Mail.ru" />
+                            alt="counter@Mail.ru" />
                     </a>
                 </div>
                 <div class="col-md-4 col-6 text-center text-md-end">
