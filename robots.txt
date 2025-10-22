@@ -1,12 +1,10 @@
 User-agent: *
 Allow: /
 
-# Запрещаем индексацию страницы в разработке
 Disallow: /under_construction.html
 Disallow: /404.html
 
-# Указываем расположение карты сайта
 Sitemap: https://contrast-s.ru/sitemap.xml
+sitemap: https://contrast-s.ru/sitemap.xml
 
-# Основные директивы для поисковых роботов
 Crawl-delay: 1
